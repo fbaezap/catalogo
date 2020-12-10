@@ -1,13 +1,11 @@
 import 'dotenv/config';
 import App from './app';
-import AuthRoute from './routes/auth.route';
 import IndexRoute from './routes/index.route';
 import ProductsRoute from './routes/products.route';
-import UsersRoute from './routes/users.route';
 import validateEnv from './utils/validateEnv';
 
 validateEnv();
 
-const app = new App([new IndexRoute(), new UsersRoute(), new AuthRoute(), new ProductsRoute()]);
+const app = new App([new IndexRoute(), new ProductsRoute()]);
 
 app.listen();
